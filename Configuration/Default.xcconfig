@@ -1,0 +1,34 @@
+//  CouchbaseMobile.xcconfig
+//
+// This defines the default build settings for the project.
+// Debug and Release specific settings are in other config files that #include this one.
+// Per-target settings are defined in the target editor GUI.
+
+// Platform / SDK
+SDKROOT = iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 4.3
+
+// Important: this tells the compiler to look for frameworks in the 'Frameworks' subdirectory.
+// This is where the Couchbase and CouchCocoa frameworks go. (If you put those frameworks
+// elsewhere, you'll need to change this path accordingly.)
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/Frameworks"
+
+// Prefix header
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = Empty App/Empty App-Prefix.pch
+
+// Compiler
+GCC_VERSION = com.apple.compilers.llvm.clang.1_0
+ALWAYS_SEARCH_USER_PATHS = NO
+GCC_DYNAMIC_NO_PIC = NO  // non-relocatable: makes code slightly more efficient
+GCC_C_LANGUAGE_STANDARD = gnu99
+
+// Turn on compiler warnings.
+// Remove some or all of these settings if you must, but I recommend fixing the warnings instead!
+// It's not hard to do, and your code will stay more stable since the compiler will catch
+// common problems for you.
+GCC_TREAT_WARNINGS_AS_ERRORS = YES
+WARNING_CFLAGS = -Wall
+GCC_WARN_ABOUT_RETURN_TYPE = YES
+GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES
+GCC_WARN_UNUSED_VARIABLE = YES

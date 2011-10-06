@@ -1,0 +1,11 @@
+//  CouchbaseMobile-Debug.xcconfig
+//
+// This defines the project's default build settings for the Debug configuration.
+// Per-target settings are defined in the target editor GUI.
+
+#include "Default.xcconfig"
+
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
+GCC_OPTIMIZATION_LEVEL = 0
+
+COPY_PHASE_STRIP = NO  // Don't strip symbols
